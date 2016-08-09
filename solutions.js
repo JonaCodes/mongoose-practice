@@ -29,6 +29,60 @@ function scrollToSee(timeSpent, effortInput, honor){
 	}
 }
 
+//Book Model
+//======================================================
+//======================================================
+//======================================================
+//======================================================
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var bookSchema = new Schema({ 
+  title: String,
+  author: String,
+  pages: Number,
+  genres: [String],
+  rating: String
+});
+
+var Book = mongoose.model("BookModel", bookSchema);
+module.exports = Book;
+
+
+
+
+
+
+
+
+//Person Model
+//======================================================
+//======================================================
+//======================================================
+//======================================================
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var personSchema = new Schema({ 
+	hair: String,
+	eyes: String,
+	weight: Number,
+	height: Number,
+	salary: Number,
+	numKids: Number,
+	kids: []
+});
+
+var Person = mongoose.model("PersonModel", personSchema);
+module.exports = Person;
+
+
+
+
+
+
+
+
 //Find books with fewer than 500 but more than 200 pages
 //======================================================
 //======================================================
