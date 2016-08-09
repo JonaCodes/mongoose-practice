@@ -59,10 +59,14 @@ Create People Collection
 =======================================================*/
 var colors = ["brown","black","red","yellow","green", "grey"]
 var getColor = function(){return colors[Math.floor(Math.random() * colors.length)]}
-var getWeight = function(){return Math.floor(Math.random()*(150-50+1)+50);}
-var getHeight = function(){return Math.floor(Math.random()*(230-120+1)+120);}
-var getSalary = function(){return Math.floor(Math.random()*(500000-20000+1)+20000);}
+var getWeight = function(){return getRandIntBetween(50, 120)}
+var getHeight = function(){return getRandIntBetween(120, 230)}
+var getSalary = function(){return getRandIntBetween(20000, 50000)}
 var getNumKids = function(){return Math.floor(Math.random()*3)}
+
+var getRandIntBetween = function(min, max){
+	return Math.floor(Math.random()*(max-min+1)+min)
+}
 
 var getKids = function(numKids){
 	var kids = [];
